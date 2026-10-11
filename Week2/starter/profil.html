@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ganti judul dengan nama kamu -->
+    <title>Profil Mahasiswa — Sistem Informasi</title>
+
+    <!-- Menghubungkan file CSS ke halaman HTML ini -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- (Opsional) Google Fonts untuk tampilan lebih modern -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header id="header-utama">
+        <!-- Ganti dengan nama kamu -->
+        <h1>Profil Mahasiswa Sistem Informasi</h1>
+        <nav class="navigasi">
+            <a href="profil.html">Beranda</a>
+            <a href="biodata.html">Biodata</a>
+        </nav>
+    </header>
+
+    <main class="konten-utama">
+
+        <!-- SECTION 1: Informasi Pribadi -->
+        <section class="kartu-profil">
+            <h2>Informasi Pribadi</h2>
+            <div class="info-profil">
+                <!-- Ganti dengan foto kamu -->
+                <img src="https://via.placeholder.com/150x150/2c3e50/ffffff?text=Foto" 
+                     alt="Foto profil mahasiswa" 
+                     class="foto-profil">
+                <div class="detail-profil">
+                    <!-- Ganti dengan data kamu -->
+                    <p><strong>Nama:</strong> Agus Ikhsyan</p>
+                    <p><strong>NIM:</strong> 10231001</p>
+                    <p><strong>Jurusan:</strong> Sistem Informasi</p>
+                    <p><strong>Angkatan:</strong> 2023</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: Mata Kuliah -->
+        <section class="kartu-profil">
+            <h2>Mata Kuliah Semester Ini</h2>
+            <ul class="daftar-mk">
+                <li>Pemrograman Lanjut</li>
+                <li>Basis Data</li>
+                <li>Analisis dan Desain Sistem</li>
+                <li>Jaringan Komputer</li>
+            </ul>
+        </section>
+
+        <!-- SECTION 3: Rencana Karir -->
+        <section class="kartu-profil">
+            <h2>Rencana Karir</h2>
+            <p>
+                Sebagai mahasiswa Sistem Informasi, saya tertarik untuk berkarir di bidang 
+                pengembangan web dan manajemen sistem informasi perusahaan.
+            </p>
+        </section>
+
+        <!-- SECTION 4: Form Kontak -->
+        <section class="kartu-profil">
+            <h2>Hubungi Saya</h2>
+            <form action="#" method="POST" class="form-kontak">
+                <div class="form-group">
+                    <label for="nama-pengirim">Nama Anda:</label>
+                    <input type="text" id="nama-pengirim" name="nama" 
+                           placeholder="Masukkan nama lengkap" required>
+                </div>
+                <div class="form-group">
+                    <label for="email-pengirim">Email:</label>
+                    <input type="email" id="email-pengirim" name="email" 
+                           placeholder="contoh@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="pesan">Pesan:</label>
+                    <textarea id="pesan" name="pesan" rows="4" 
+                              placeholder="Tulis pesan kamu..." required></textarea>
+                </div>
+                <button type="submit" class="tombol-kirim">Kirim Pesan</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="footer-bawah">
+        <!-- Ganti nama dengan nama kamu -->
+        <p>&copy; 2025 Agus Ikhsyan — Sistem Informasi</p>
+    </footer>
+
+</body>
+</html>

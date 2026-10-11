@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ganti teks di bawah ini dengan nama kamu -->
+    <title>Profil Mahasiswa — Sistem Informasi</title>
+</head>
+<body>
+
+    <!-- ===================================================
+         HEADER: Bagian paling atas halaman
+         Biasanya berisi nama/judul utama dan navigasi
+    =================================================== -->
+    <header>
+        <!-- Ada tepat SATU <h1> per halaman! -->
+        <h1>Profil Mahasiswa Sistem Informasi</h1>
+
+        <!-- Navigasi antar halaman -->
+        <nav>
+            <a href="profil.html">Beranda</a> |
+            <a href="biodata.html">Biodata Saya</a>
+        </nav>
+    </header>
+
+    <!-- ===================================================
+         MAIN: Konten utama halaman
+    =================================================== -->
+    <main>
+
+        <!-- SECTION 1: Informasi Pribadi -->
+        <section>
+            <h2>Informasi Pribadi</h2>
+
+            <!-- Gambar profil. Ganti src dengan path foto kamu -->
+            <!-- alt wajib diisi dengan deskripsi yang bermakna -->
+            <img src="https://via.placeholder.com/150x150" alt="Foto profil mahasiswa Sistem Informasi">
+
+            <p><strong>Nama Lengkap:</strong> Agus Ikhsyan</p>
+            <!-- Ganti dengan NIM kamu -->
+            <p><strong>NIM:</strong> 10231001</p>
+            <p><strong>Jurusan:</strong> Sistem Informasi</p>
+            <p><strong>Angkatan:</strong> 2023</p>
+        </section>
+
+        <!-- SECTION 2: Daftar Mata Kuliah -->
+        <section>
+            <h2>Mata Kuliah Semester Ini</h2>
+
+            <!-- ul = unordered list = daftar dengan bullet -->
+            <ul>
+                <li>Pemrograman Lanjut</li>
+                <li>Basis Data</li>
+                <li>Analisis dan Desain Sistem</li>
+                <li>Jaringan Komputer</li>
+                <!-- Tambahkan mata kuliah lain jika mau -->
+            </ul>
+        </section>
+
+        <!-- SECTION 3: Langkah-langkah (Contoh daftar berurutan) -->
+        <section>
+            <h2>Cara Mengakses File PHP via XAMPP</h2>
+
+            <!-- ol = ordered list = daftar bernomor -->
+            <ol>
+                <li>Buka XAMPP Control Panel</li>
+                <li>Klik <strong>Start</strong> di sebelah Apache</li>
+                <li>Taruh file PHP di folder <code>C:\xampp\htdocs\</code></li>
+                <li>Buka browser dan ketik <code>http://localhost/namafile.php</code></li>
+            </ol>
+        </section>
+
+        <!-- SECTION 4: Rencana Karir -->
+        <section>
+            <h2>Rencana Karir</h2>
+
+            <p>
+                Sebagai mahasiswa Sistem Informasi, saya tertarik untuk berkarir di bidang 
+                pengembangan web dan manajemen sistem informasi perusahaan. 
+                Saya ingin menguasai teknologi web modern seperti PHP, JavaScript, dan framework populer.
+            </p>
+
+            <p>
+                Dalam 5 tahun ke depan, saya berencana untuk bekerja di perusahaan teknologi 
+                sebagai <em>Web Developer</em> atau <em>System Analyst</em>, 
+                sambil terus mengembangkan kemampuan melalui sertifikasi profesional.
+            </p>
+        </section>
+
+        <!-- SECTION 5: Contoh berbagai elemen teks -->
+        <section>
+            <h2>Tentang Pemrograman Lanjut</h2>
+
+            <p>
+                Mata kuliah <strong>Pemrograman Lanjut</strong> mempelajari:
+            </p>
+
+            <!-- Teks dengan berbagai gaya -->
+            <p>
+                HTML adalah singkatan dari <em>HyperText Markup Language</em>. 
+                Tag seperti <code>&lt;p&gt;</code> dan <code>&lt;h1&gt;</code> adalah 
+                instruksi bagi browser untuk menampilkan konten.
+            </p>
+
+            <!-- Contoh link ke website eksternal -->
+            <p>
+                Referensi belajar HTML yang baik: 
+                <a href="https://developer.mozilla.org/id/docs/Web/HTML" target="_blank">
+                    MDN Web Docs (klik untuk membuka di tab baru)
+                </a>
+            </p>
+        </section>
+
+        <!-- SECTION 6: Form Kontak -->
+        <section>
+            <h2>Hubungi Saya</h2>
+
+            <!-- Form ini belum "aktif" karena belum ada PHP untuk memprosesnya -->
+            <!-- Nanti di Modul 4 kita akan belajar cara memproses form dengan PHP -->
+            <form action="#" method="POST">
+
+                <!-- Input Nama -->
+                <div>
+                    <!-- label "for" harus sama dengan input "id" -->
+                    <label for="nama-pengirim">Nama Anda:</label><br>
+                    <input type="text" 
+                           id="nama-pengirim" 
+                           name="nama" 
+                           placeholder="Masukkan nama lengkap Anda"
+                           required>
+                </div>
+
+                <br>
+
+                <!-- Input Email -->
+                <div>
+                    <label for="email-pengirim">Email Anda:</label><br>
+                    <input type="email" 
+                           id="email-pengirim" 
+                           name="email" 
+                           placeholder="contoh@email.com"
+                           required>
+                </div>
+
+                <br>
+
+                <!-- Pilihan Topik (Radio - hanya satu yang bisa dipilih) -->
+                <div>
+                    <p><strong>Topik Pesan:</strong></p>
+
+                    <!-- Semua radio dengan name yang sama = satu kelompok pilihan -->
+                    <input type="radio" id="topik-kerja" name="topik" value="kerja_sama">
+                    <label for="topik-kerja">Kerja Sama</label>
+
+                    <br>
+
+                    <input type="radio" id="topik-tanya" name="topik" value="tanya_jawab">
+                    <label for="topik-tanya">Tanya Jawab</label>
+
+                    <br>
+
+                    <input type="radio" id="topik-lain" name="topik" value="lainnya">
+                    <label for="topik-lain">Lainnya</label>
+                </div>
+
+                <br>
+
+                <!-- Textarea untuk pesan panjang -->
+                <div>
+                    <label for="pesan">Pesan:</label><br>
+                    <textarea id="pesan" 
+                              name="pesan" 
+                              rows="5" 
+                              placeholder="Tulis pesan Anda di sini..."
+                              required></textarea>
+                </div>
+
+                <br>
+
+                <!-- Tombol submit -->
+                <button type="submit">Kirim Pesan</button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- ===================================================
+         FOOTER: Bagian paling bawah halaman
+    =================================================== -->
+    <footer>
+        <!-- Ganti nama di bawah ini dengan nama kamu -->
+        <p>&copy; 2025 Agus Ikhsyan — Sistem Informasi</p>
+    </footer>
+
+</body>
+</html>

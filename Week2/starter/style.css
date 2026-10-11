@@ -1,0 +1,298 @@
+/* =====================================================
+   MODUL 2 — CSS DASAR
+   File: style.css
+   
+   Struktur file ini:
+   1. Reset & Variabel Warna
+   2. Styling Dasar (body, teks)
+   3. Header & Navigasi
+   4. Konten Utama & Kartu
+   5. Profil (foto + info)
+   6. Daftar Mata Kuliah
+   7. Form Kontak
+   8. Footer
+   9. Efek Hover
+===================================================== */
+
+
+/* =====================================================
+   1. RESET & VARIABEL WARNA
+   
+   Reset menghapus margin/padding default browser
+   agar tampilan konsisten di semua browser.
+   
+   Variabel CSS (--nama-variabel) memudahkan
+   penggantian warna di seluruh file.
+===================================================== */
+* {
+    /* Hapus semua margin dan padding default browser */
+    margin: 0;
+    padding: 0;
+    /* border-box: padding tidak menambah total lebar elemen */
+    box-sizing: border-box;
+}
+
+/* Variabel warna — ganti nilai di sini untuk tema berbeda */
+:root {
+    --warna-utama: #2c3e50;      /* Biru gelap — header, aksen */
+    --warna-sekunder: #3498db;   /* Biru terang — tombol, link hover */
+    --warna-teks: #333333;       /* Abu-abu gelap — teks utama */
+    --warna-latar: #f4f6f9;      /* Abu-abu sangat muda — latar halaman */
+    --warna-kartu: #ffffff;      /* Putih — latar kartu/section */
+    --warna-footer: #1a252f;     /* Sangat gelap — footer */
+}
+
+
+/* =====================================================
+   2. STYLING DASAR — BODY
+===================================================== */
+body {
+    /* Gunakan variabel warna yang didefinisikan di atas */
+    background-color: var(--warna-latar);
+    color: var(--warna-teks);
+    
+    /* Font: Poppins (dari Google Fonts), fallback ke sans-serif */
+    font-family: 'Poppins', Arial, sans-serif;
+    
+    /* Ukuran font dasar dan jarak antar baris */
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* Semua link */
+a {
+    color: var(--warna-utama);
+    text-decoration: none; /* Hilangkan garis bawah bawaan */
+}
+
+
+/* =====================================================
+   3. HEADER & NAVIGASI
+===================================================== */
+#header-utama {
+    background-color: var(--warna-utama);
+    color: white;
+    padding: 20px 40px;
+    /* Box shadow memberi efek bayangan di bawah header */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+#header-utama h1 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Navigasi menggunakan Flexbox */
+.navigasi {
+    display: flex;           /* Aktifkan flexbox */
+    gap: 20px;              /* Jarak antar link */
+    align-items: center;    /* Sejajarkan secara vertikal */
+}
+
+.navigasi a {
+    color: rgba(255, 255, 255, 0.8); /* Putih agak transparan */
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: all 0.3s ease; /* Animasi transisi saat hover */
+}
+
+
+/* =====================================================
+   4. KONTEN UTAMA & KARTU SECTION
+===================================================== */
+.konten-utama {
+    /* Batasi lebar konten agar tidak terlalu lebar di layar besar */
+    max-width: 800px;
+    
+    /* margin: atas-bawah kiri-kanan */
+    /* auto pada kiri-kanan = otomatis posisikan di tengah */
+    margin: 30px auto;
+    
+    padding: 0 20px;
+}
+
+/* Setiap section tampil sebagai "kartu" */
+.kartu-profil {
+    background-color: var(--warna-kartu);
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 20px;
+    
+    /* Border tipis di sisi kiri sebagai aksen */
+    border-left: 4px solid var(--warna-sekunder);
+    
+    /* Bayangan halus */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.kartu-profil h2 {
+    color: var(--warna-utama);
+    font-size: 18px;
+    margin-bottom: 15px;
+    
+    /* Garis bawah sebagai pemisah judul dan konten */
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+
+/* =====================================================
+   5. PROFIL — FOTO DAN INFO SEJAJAR
+===================================================== */
+.info-profil {
+    display: flex;          /* Sejajarkan foto dan detail */
+    gap: 25px;
+    align-items: flex-start; /* Rata atas */
+}
+
+.foto-profil {
+    width: 120px;
+    height: 120px;
+    
+    /* object-fit: cover = gambar tidak terdistorsi dalam kotak */
+    object-fit: cover;
+    
+    /* Jadikan foto bulat */
+    border-radius: 50%;
+    
+    /* Border sebagai bingkai */
+    border: 3px solid var(--warna-sekunder);
+    
+    /* Jangan menyusut saat flex container mengecil */
+    flex-shrink: 0;
+}
+
+.detail-profil p {
+    margin-bottom: 6px;
+}
+
+
+/* =====================================================
+   6. DAFTAR MATA KULIAH
+===================================================== */
+.daftar-mk {
+    /* Hilangkan bullet default, kita buat sendiri via padding */
+    list-style: none;
+}
+
+.daftar-mk li {
+    padding: 8px 0;
+    padding-left: 20px;
+    border-bottom: 1px solid #f0f0f0;
+    
+    /* Buat "bullet" custom menggunakan pseudo-element */
+    position: relative;
+}
+
+/* Tambahkan tanda "›" sebelum setiap item list */
+.daftar-mk li::before {
+    content: "›";
+    color: var(--warna-sekunder);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+
+/* =====================================================
+   7. FORM KONTAK
+===================================================== */
+.form-kontak {
+    display: flex;
+    flex-direction: column; /* Susun form-group secara vertikal */
+    gap: 15px;
+}
+
+/* Setiap group = label + input */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Jarak antara label dan input */
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--warna-utama);
+}
+
+/* Styling untuk semua input text, email, dan textarea */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 15px;
+    font-family: inherit; /* Pakai font yang sama dengan body */
+    transition: border-color 0.3s ease;
+}
+
+/* Efek saat input difokus (diklik) */
+.form-group input:focus,
+.form-group textarea:focus {
+    /* Hilangkan outline default browser */
+    outline: none;
+    /* Ganti dengan border warna biru */
+    border-color: var(--warna-sekunder);
+    /* Bayangan biru tipis */
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
+}
+
+/* Tombol Kirim */
+.tombol-kirim {
+    align-self: flex-start; /* Tombol tidak memenuhi lebar penuh */
+    background-color: var(--warna-sekunder);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+/* =====================================================
+   8. FOOTER
+===================================================== */
+.footer-bawah {
+    background-color: var(--warna-footer);
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    margin-top: 40px;
+}
+
+
+/* =====================================================
+   9. EFEK HOVER
+   
+   Hover = efek saat kursor diarahkan ke elemen
+   transition = animasi perubahan yang halus
+===================================================== */
+
+/* Link navigasi berubah warna saat di-hover */
+.navigasi a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+/* Tombol berubah warna gelap saat di-hover */
+.tombol-kirim:hover {
+    background-color: #2980b9; /* Biru lebih gelap */
+    /* translateY(-2px) = geser 2px ke atas = efek "terangkat" */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
+}
+
+/* Kartu mendapat bayangan lebih besar saat di-hover */
+.kartu-profil:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
